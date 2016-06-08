@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FyneFest.Sync.Console", "FyneFest.Sync.Console\FyneFest.Sync.Console.csproj", "{9D348422-01CF-499C-8252-2D0F55A6366C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{676ACED4-A239-4E98-A8DC-50F195CD61D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utility", "Utility", "{7260991D-B225-4171-A265-F6FE39470FEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FyneFest.Sync", "FyneFest.Sync\FyneFest.Sync.csproj", "{93A2B0E5-3704-46DB-ACA5-7AC6B574940B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TickerTools.Common", "libticker\TickerTools.Common\TickerTools.Common.csproj", "{1BBAA45D-3F11-43FD-8F10-41D55F975DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FyneFest.Models", "FyneFest.Models\FyneFest.Models.csproj", "{FB8C9A1E-2542-42CE-972F-AAF41CD2C002}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D348422-01CF-499C-8252-2D0F55A6366C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D348422-01CF-499C-8252-2D0F55A6366C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D348422-01CF-499C-8252-2D0F55A6366C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D348422-01CF-499C-8252-2D0F55A6366C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A2B0E5-3704-46DB-ACA5-7AC6B574940B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A2B0E5-3704-46DB-ACA5-7AC6B574940B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A2B0E5-3704-46DB-ACA5-7AC6B574940B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A2B0E5-3704-46DB-ACA5-7AC6B574940B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BBAA45D-3F11-43FD-8F10-41D55F975DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BBAA45D-3F11-43FD-8F10-41D55F975DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BBAA45D-3F11-43FD-8F10-41D55F975DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BBAA45D-3F11-43FD-8F10-41D55F975DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8C9A1E-2542-42CE-972F-AAF41CD2C002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8C9A1E-2542-42CE-972F-AAF41CD2C002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8C9A1E-2542-42CE-972F-AAF41CD2C002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8C9A1E-2542-42CE-972F-AAF41CD2C002}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D348422-01CF-499C-8252-2D0F55A6366C} = {7260991D-B225-4171-A265-F6FE39470FEF}
+		{93A2B0E5-3704-46DB-ACA5-7AC6B574940B} = {7260991D-B225-4171-A265-F6FE39470FEF}
+		{1BBAA45D-3F11-43FD-8F10-41D55F975DCE} = {676ACED4-A239-4E98-A8DC-50F195CD61D6}
+		{FB8C9A1E-2542-42CE-972F-AAF41CD2C002} = {676ACED4-A239-4E98-A8DC-50F195CD61D6}
+	EndGlobalSection
+EndGlobal

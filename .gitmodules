@@ -1,0 +1,6 @@
+[submodule "deploy"]
+	path = deploy
+	url = https://github.com/jdbrock/deployment-helpers.git
+[submodule "libticker"]
+	path = libticker
+	url = https://github.com/lonedawg/libticker.git

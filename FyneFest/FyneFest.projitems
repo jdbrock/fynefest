@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>63212d53-332c-4a80-90d3-9c0ed8cb9b23</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CBC</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\SessionToColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View Models\BeerPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View Models\BeerTickPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View Models\MainTabbedPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\BeerPage.xaml.cs">
+      <DependentUpon>BeerPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\BeerTickPage.xaml.cs">
+      <DependentUpon>BeerTickPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainTabbedPageView.xaml.cs">
+      <DependentUpon>MainTabbedPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View Models\BeerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\RatingConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanFlipConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\RatingOpacityConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MapPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MainTabbedPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\BeerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)fynefest-preload-data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Beer-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Beer-25@2x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\cancel-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\checkmark-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\four_fingers-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\hearts-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\map.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\middle_finger-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\three_fingers-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\treasure_map-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\two_fingers-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\cancel-25%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\four_fingers-25%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\hearts-25%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\middle_finger-25%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\three_fingers-25%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\treasure_map-25%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\two_fingers-25%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\thumbs-up-25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\thumbs-up-25%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\heart-filled-white%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\heart-filled-white.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\checkmark-white%402x.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\checkmark-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\BeerTickPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Labs.Controls;assembly=XLabs.Forms"
+             x:Class="FyneFest.BeerTickPage"
+             Title="Check In">
+
+
+    <ScrollView Orientation="Vertical">
+        <StackLayout Padding="25,20,25,15" Orientation="Vertical">
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,20">
+                <Label Text="Brewery Name:" />
+                <Label Text="{Binding Beer.BreweryName}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,20">
+                <Label Text="Beer Name:" />
+                <Label Text="{Binding Beer.BeerName}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,20">
+                <Label Text="ABV:" />
+                <Label Text="{Binding Beer.ABV, StringFormat='{0:F2}%'}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,20">
+                <Label Text="Style:" />
+                <Label Text="{Binding Beer.StyleName}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,20">
+                <Label Text="Rating:" />
+                <Label Text="{Binding TickRating}" />
+                <Stepper Value="{Binding TickRating}" Increment="0.5" Minimum="0" Maximum="5" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,20">
+                <Label Text="Comments:" />
+                <Entry Text="{Binding TickComments}" />
+            </StackLayout>
+
+            <!--<StackLayout Orientation="Vertical" Padding="0,0,0,25">
+                <Label Text="Date Acquired: " />
+                <DatePicker Date="{Binding DateAcquired}" x:Name="DateAcquired" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,25">
+                <Label Text="Date Expires: " />
+                <this:NullableDatePicker NullableDate="{Binding DateExpires}" x:Name="DateExpires" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,25">
+                <Label Text="Date Bottled: " />
+                <this:NullableDatePicker NullableDate="{Binding DateBottled}" x:Name="DateBottled" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,25">
+                <Label Text="Vintage: " />
+                <Entry Text="{Binding Vintage}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,25">
+                <Label Text="Shelf/Box/Room: " />
+                <Entry Text="{Binding LocationIdentifier}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,25">
+                <Label Text="Notes: " />
+                <Entry Text="{Binding Notes}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="0,0,0,25">
+                <Label Text="Starred: " />
+                <Switch IsToggled="{Binding IsToggled}" />
+            </StackLayout>-->
+
+            <StackLayout Orientation="Vertical" Padding="0">
+                <Button Text="Save" Clicked="OnSaveButtonClicked" />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

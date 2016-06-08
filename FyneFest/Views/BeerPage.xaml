@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Labs.Controls;assembly=XLabs.Forms"
+             xmlns:this="clr-namespace:FyneFest;assembly=FyneFest"
+             xmlns:sfr="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+             x:Class="FyneFest.BeerPage" Padding="0,21,0,0">
+
+  <ContentPage.Resources>
+
+    <ResourceDictionary>
+
+      <this:SessionToColorConverter x:Key="SessionToColorConverter" />
+      <this:RatingConverter x:Key="RatingConverter" />
+      <this:BooleanFlipConverter x:Key="BooleanFlipConverter" />
+      <this:RatingOpacityConverter x:Key="RatingOpacityConverter" />
+
+      <sfr:SfRatingSettings x:Key="RatingSettings" RatedFill="#f39c12" UnRatedFill="#DFDFDF" RatedStrokeWidth="0" UnRatedStrokeWidth="0" />
+
+      <Style x:Key="FavouriteButtonStyle" TargetType="Button">
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding Beer.MetaData.IsFavorited}" Value="false" TargetType="Button">
+            <DataTrigger.Setters>
+              <Setter Property="Image" Value="{x:Null}" />
+            </DataTrigger.Setters>
+          </DataTrigger>
+          <DataTrigger Binding="{Binding Beer.MetaData.IsTicked}" Value="false" TargetType="Button">
+            <DataTrigger.Setters>
+              <Setter Property="Image" Value="{x:Null}" />
+            </DataTrigger.Setters>
+          </DataTrigger>
+          <DataTrigger Binding="{Binding Beer.MetaData.IsFavorited}" Value="true" TargetType="Button">
+            <DataTrigger.Setters>
+              <Setter Property="Image" Value="heart-filled-white.png" />
+            </DataTrigger.Setters>
+          </DataTrigger>
+          <DataTrigger Binding="{Binding Beer.MetaData.IsTicked}" Value="true" TargetType="Button">
+            <DataTrigger.Setters>
+              <Setter Property="Image" Value="checkmark-white.png" />
+            </DataTrigger.Setters>
+          </DataTrigger>
+        </Style.Triggers>
+      </Style>
+
+    </ResourceDictionary>
+
+  </ContentPage.Resources>
+
+  <!--<ContentPage.ToolbarItems>
+    <ToolbarItem Name="A-Z" Order="Secondary" Priority="0" Command="{Binding OrderAZCommand}" />
+    <ToolbarItem Name="Fav" Order="Secondary" Priority="0" Command="{Binding OrderFavCommand}" />
+  </ContentPage.ToolbarItems>-->
+
+  <StackLayout Spacing="0">
+    <SearchBar SearchCommand="{Binding SearchCommand}" Text="{Binding SearchText}" />
+
+    <StackLayout BackgroundColor="#ecf0f1">
+      <Label Text="Tap the box to like or tick. Tap elsewhere to rate." Margin="10,10,10,11" FontSize="Micro" />
+    </StackLayout>
+
+    <StackLayout BackgroundColor="#f4f4f4" IsVisible="{Binding HasDataNote}">
+      <Label Text="{Binding DataNote}" Margin="10,10,10,11" FontSize="Micro" />
+    </StackLayout>
+
+    <ListView CachingStrategy="RecycleElement" Margin="0,5,0,0" ItemsSource="{Binding FilteredBeers}" RowHeight="76" ItemTapped="OnBeerTapped" ItemSelected="OnBeerSelected" Refreshing="OnRefreshing" IsPullToRefreshEnabled="true" GroupDisplayBinding="{Binding StyleName}" SeparatorColor="#eeeeee" SeparatorVisibility="None">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <!--<ViewCell.ContextActions>
+              <MenuItem Clicked="OnBeerFavorite" Text="Favorite" IsDestructive="False" />
+            </ViewCell.ContextActions>-->
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+
+              <!-- Fav/Tick button. -->
+              <Grid Grid.Column="0" Margin="10,5,0,5" WidthRequest="48">
+                <BoxView BackgroundColor="#85DBEF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+
+                <Button Style="{StaticResource FavouriteButtonStyle}" Clicked="OnBeerFavorite"
+              		BorderRadius="0" VerticalOptions="FillAndExpand" HorizontalOptions="Center" WidthRequest="48" />
+
+              </Grid>
+
+              <!-- Brewery / Beer / Style -->
+              <StackLayout Orientation="Vertical" Grid.Column="1" Padding="10,5,5,5" HorizontalOptions="StartAndExpand">
+                <Label Text="{Binding Beer.BreweryName}"  LineBreakMode="TailTruncation" FontSize="Medium" FontAttributes="Bold" />
+                <Label Text="{Binding Beer.BeerName}"     LineBreakMode="TailTruncation" FontSize="Small" />
+                <Label Text="{Binding Beer.ABVAndStyle}"  LineBreakMode="TailTruncation" FontSize="Micro" Opacity="0.5" />
+              </StackLayout>
+
+              <!-- Ratings -->
+              <Grid Grid.Column="2" Padding="10,5,5,5" VerticalOptions="FillAndExpand" HorizontalOptions="End" WidthRequest="138" IsVisible="{Binding IsExpanded}">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label HeightRequest="15" Grid.Row="0" Text="{Binding Beer.MetaData.TickRating, StringFormat='{0:0.00}'}" Margin="0,0,9,0" HorizontalTextAlignment="End" HorizontalOptions="End" Opacity="{Binding Beer.MetaData.TickRating, Converter={StaticResource RatingOpacityConverter}}" FontSize="Small" />
+
+                <sfr:SfRating Grid.Row="1" Precision="Exact" IsVisible="{Binding IsExpanded}"
+                  Value="{Binding Beer.MetaData.TickRating, Mode=TwoWay, Converter={StaticResource RatingConverter}}"
+                    ItemSize="22" ValueChanged="OnRatingValueChanged" RatingSettings="{StaticResource RatingSettings}" />
+
+              </Grid>
+
+            </Grid>
+
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+
+</ContentPage>

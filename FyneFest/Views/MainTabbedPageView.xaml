@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FyneFest;assembly=FyneFest"
+             x:Class="FyneFest.MainTabbedPageView">
+
+    <TabbedPage.Children>
+
+        <NavigationPage x:Name="BeerNavigationPage" Title="Beer" Icon="Beer-25.png">
+            <x:Arguments>
+                <local:BeerPage x:Name="BeerPage" BindingContext="{Binding BeerViewModel}" Title="Beer"  />
+            </x:Arguments>
+        </NavigationPage>
+
+        <!--<NavigationPage x:Name="MapNavigationPage" Title="Map" Icon="treasure_map-25.png">
+            <x:Arguments>
+                <local:MapPage x:Name="MapPage" Title="Map" />
+            </x:Arguments>
+        </NavigationPage>-->
+
+    </TabbedPage.Children>
+
+</TabbedPage>
