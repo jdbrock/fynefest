@@ -48,13 +48,14 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: Joe Brock (VE5CZ37N5Z)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>
     </CodesignProvision>
     <CodesignExtraArgs>
     </CodesignExtraArgs>
+    <CodesignResourceRules />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -76,8 +77,9 @@
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
-    <CodesignProvision>9279741b-e19b-4f7b-ac0f-9a558c9c8042</CodesignProvision>
-    <CodesignKey>iPhone Distribution: Joseph Brock (Z35UDRZRCC)</CodesignKey>
+    <CodesignProvision>
+    </CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignExtraArgs>
     </CodesignExtraArgs>
